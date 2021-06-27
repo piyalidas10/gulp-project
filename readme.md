@@ -1,6 +1,6 @@
 Babel is an open-source Javascript library that is used to convert (or transpile) JavaScript ES6+ code to ES5 for browser compatibility.
 
-# Create Folder 
+# Run Gulp Project
 Create a project folder "gulp-project"
 
 # Installing Gulp
@@ -41,6 +41,7 @@ Here, you want to tell browser sync which file to start. In many cases, just the
 
 
 # Setting up Babel 7
+Convert ES6 or latest version to ES5 version for browser compatibility
 ```
 npm install --save-dev babel-preset-env
 ```
@@ -53,8 +54,54 @@ create .babelrc file
 https://babeljs.io/blog/2015/10/31/setting-up-babel-6
 
 
+# Minimized Images (Jpg, Png)
+https://github.com/imagemin/imagemin-mozjpeg
+https://github.com/imagemin/imagemin-optipng
+https://www.npmjs.com/package/imagemin
+https://www.npmjs.com/package/imagemin-svgo
+
+### packages needed
+```
+    "gulp-imagemin": "^7.1.0",
+    "imagemin": "^7.0.0",
+    "imagemin-pngquant": "^5.0.1",
+    "imagemin-gifsicle": "^6.0.1",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-optipng": "^6.0.0",
+    "imagemin-svgo": "^7.0.0",
+    "pngquant": "^4.0.0",
+    "pngquant-bin": "^3.1.1"
+```
+
+### code implementation
+```
+return imagemin([paths.images.src], {
+    destination: paths.images.dest,
+    plugins: [
+      imageminMozjpeg({ // minify jpg images
+        quality: [50]
+      }),
+      imageminPngquant({ // minify png images
+        quality: [50]
+      }),
+      imageminGifsicle({ // minify gif images
+        optimizationLevel: 2 // Select an optimization level between 1 and 3
+      }),
+      imageminSvgo({
+				plugins: extendDefaultPlugins([
+					{name: 'removeViewBox', active: false}
+				])
+			})
+    ]
+  });
+```
+
 # Reference URLs
 ```
+https://hackersandslackers.com/image-optimization-imagemin-and-gulp/
+https://stackoverflow.com/questions/42152008/gulp-imagemin-couldnt-load-default-plugin-xxx
+https://www.sitepoint.com/introduction-gulp-js/
+https://www.toptal.com/front-end/webpack-browserify-gulp-which-is-better
 https://www.toptal.com/javascript/optimize-js-and-css-with-gulp
 https://medium.com/swlh/setting-up-gulp-4-0-2-for-bootstrap-sass-and-browsersync-7917f5f5d2c5
 https://gulpjs.com/docs/en/getting-started/quick-start/
@@ -63,4 +110,7 @@ https://github.com/gulpjs/gulp
 https://github.com/JohnFajardo/JohnFajardo
 https://www.codebyamir.com/blog/convert-javascript-es6-to-es5-using-babel
 https://semaphoreci.com/community/tutorials/getting-started-with-gulp-js
+https://css-tricks.com/gulp-for-beginners/
+https://web.dev/codelab-imagemin-gulp/
+https://www.tutorialspoint.com/gulp/gulp_optimizing_images.htm
 ```

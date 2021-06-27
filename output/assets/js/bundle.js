@@ -21,9 +21,8 @@ function sum() {
   return sum;
 }
 
-var x = sum(4, 9, 16, 25, 29, 100, 66, 77);
-console.log('x => ', x);
-document.getElementById("demo").innerHTML = x;
+var x = sum(11, 12, 13);
+document.getElementById("demo").innerHTML = "Sum of 11+12+13 => " + x;
 
 var Person = /*#__PURE__*/function () {
   function Person(fname, lname) {
@@ -45,4 +44,3 @@ var Person = /*#__PURE__*/function () {
 
 var person = new Person('Piyali', 'Das');
 document.getElementById("name").innerHTML = person.fname + " " + person.lname;
-console.log(person);

@@ -11,4 +11,3 @@ class Person {
 
  const person = new Person('Piyali', 'Das');
  document.getElementById("name").innerHTML = person.fname + " " + person.lname;
- console.log(person);

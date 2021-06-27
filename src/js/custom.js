@@ -4,6 +4,5 @@ function sum(...args) {
    return sum;
  }
  
- let x = sum(4, 9, 16, 25, 29, 100, 66, 77);
- console.log('x => ', x);
- document.getElementById("demo").innerHTML = x;
+ let x = sum(11, 12, 13);
+ document.getElementById("demo").innerHTML = "Sum of 11+12+13 => "+ x;
