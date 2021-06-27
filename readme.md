@@ -1,7 +1,10 @@
-Babel is an open-source Javascript library that is used to convert (or transpile) JavaScript ES6+ code to ES5 for browser compatibility.
+# Front End Development using Gulp, SASS, HTML5, Babel
+Task Runner are tools to simplify your tedious work on development, like automating sass/sass compiler, bundling assets, linting source code, hot reloading local server. 
 
 # Run Gulp Project
-Create a project folder "gulp-project"
+```
+gulp build
+```
 
 # Installing Gulp
 Before we install gulp you need to have Node.js (Node) installed in your computer.
@@ -55,6 +58,8 @@ https://babeljs.io/blog/2015/10/31/setting-up-babel-6
 
 
 # Minimized Images (Jpg, Png)
+Compare image sizes with src/images folder and output/assests/images. Output folder images size are less than original src folder.
+
 https://github.com/imagemin/imagemin-mozjpeg
 https://github.com/imagemin/imagemin-optipng
 https://www.npmjs.com/package/imagemin
@@ -62,15 +67,16 @@ https://www.npmjs.com/package/imagemin-svgo
 
 ### packages needed
 ```
-    "gulp-imagemin": "^7.1.0",
     "imagemin": "^7.0.0",
-    "imagemin-pngquant": "^5.0.1",
     "imagemin-gifsicle": "^6.0.1",
     "imagemin-jpegtran": "^6.0.0",
+    "imagemin-mozjpeg": "^8.0.0",
     "imagemin-optipng": "^6.0.0",
+    "imagemin-pngquant": "^5.0.1",
     "imagemin-svgo": "^7.0.0",
     "pngquant": "^4.0.0",
-    "pngquant-bin": "^3.1.1"
+    "pngquant-bin": "^3.1.1",
+    "svgo": "^2.3.1"
 ```
 
 ### code implementation
@@ -98,6 +104,8 @@ return imagemin([paths.images.src], {
 
 # Reference URLs
 ```
+https://medium.com/@defrian.yarfi/frontend-development-with-gulp-twig-and-scss-html-pages-a416f89b6669
+https://zellwk.com/blog/nunjucks-with-gulp/
 https://hackersandslackers.com/image-optimization-imagemin-and-gulp/
 https://stackoverflow.com/questions/42152008/gulp-imagemin-couldnt-load-default-plugin-xxx
 https://www.sitepoint.com/introduction-gulp-js/
